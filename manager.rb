@@ -24,6 +24,18 @@ class Manager < Employee
     @employees = input_options[:employees]
   end
 
+  def give_all_raises
+    @employees.each do |employee|
+      employee.give_annual_raise
+    end
+  end
+
+  def fire_all_employees
+    @employees.each do |employee|
+      employee.active = false
+    end
+  end
+
   def send_report
     puts "Sending Email..."
     #code to send email
@@ -50,15 +62,20 @@ manager = Manager.new(
                       last_name: "Powers",
                       salary: 120000,
                       active: true,
-                      employees: [employee_1, employee_2]
+                      :employees => [employee_1, employee_2]
                       )
 
 
-manager.print_info
-manager.send_report
+# manager.print_info
+# manager.send_report
+p employee_1
+p employee_2
 
-p manager
+puts ""
+manager.fire_all_employees
 
+p employee_1
+p employee_2
 
 
 
