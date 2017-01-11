@@ -14,6 +14,7 @@ class Employee
   attr_reader :first_name, :last_name, :salary, :active
   attr_writer :active
 
+    # hash into initialize
   def initialize(input_options)
       @first_name = input_options[:first_name]
       @last_name = input_options[:last_name]
